@@ -17,7 +17,7 @@ private data class IndexedWeatherData(
 
 /**
  * this method maps out WeatherDataDto object to our domain WeatherData map
- * api returns lists with 7*24 elements, so we just divide them
+ * api returns lists with 7*24 elements, so we just divide them.
  * our indexes are begin from 0 to 6 representing 7 days. 0 - today, 1 - tomorrow, etc
  */
 fun WeatherDataDto.toWeatherDataMap() : Map<Int, List<WeatherData>>{
@@ -54,6 +54,7 @@ fun WeatherDataDto.toWeatherDataMap() : Map<Int, List<WeatherData>>{
  */
 fun WeatherDto.toWeatherInfo() : WeatherInfo{
     val weatherDataMap = weatherData.toWeatherDataMap()
+
     var day = 0
     val now = LocalDateTime.now()
 
@@ -65,7 +66,7 @@ fun WeatherDto.toWeatherInfo() : WeatherInfo{
         if(now.hour == 23 && now.minute > 30) day++
     }
 
-    val currentWeatherData = weatherDataMap[0]?.find {
+    val currentWeatherData = weatherDataMap[day]?.find {
         it.time.hour == hour
     }
     return WeatherInfo(
