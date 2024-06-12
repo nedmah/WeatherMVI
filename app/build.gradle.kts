@@ -58,6 +58,7 @@ dependencies {
     val hilt_compiler = "1.2.0"
     val paging_version = "3.3.0"
     val room_version = "2.6.1"
+    val material_version = "1.2.1"
 
 
     implementation ("androidx.lifecycle:lifecycle-runtime-compose:$viewmodel_version")
@@ -68,7 +69,7 @@ dependencies {
     kapt ("com.google.dagger:hilt-android-compiler:$hilt_version")
     kapt ("androidx.hilt:hilt-compiler:$hilt_compiler")
     implementation ("androidx.hilt:hilt-navigation-compose:$hilt_compiler")
-    implementation ("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+
 
 
     // Retrofit
@@ -87,7 +88,7 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material3:material3:$material_version")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

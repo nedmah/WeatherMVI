@@ -6,9 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.example.weathermvi.domain.Location.LocationTracker
 import com.example.weathermvi.domain.repository.WeatherRepository
 import com.example.weathermvi.domain.util.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class WeatherViewModel @Inject constructor(
     private val weatherRepository: WeatherRepository,
     private val locationTracker: LocationTracker

@@ -30,6 +30,10 @@ class DefaultLocationTracker @Inject constructor(
                 ContextCompat.checkSelfPermission(
                     application,
                     android.Manifest.permission.ACCESS_FINE_LOCATION
+                ) == PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(
+                    application,
+                    android.Manifest.permission.INTERNET
                 ) == PackageManager.PERMISSION_GRANTED
 
 

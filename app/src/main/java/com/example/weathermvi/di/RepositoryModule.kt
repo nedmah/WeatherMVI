@@ -1,5 +1,6 @@
 package com.example.weathermvi.di
 
+import com.example.weathermvi.data.repository.WeatherRepositoryImpl
 import com.example.weathermvi.domain.repository.WeatherRepository
 import dagger.Binds
 import dagger.Module
@@ -13,5 +14,5 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindRepository(repositoryModule: RepositoryModule) : WeatherRepository
+    abstract fun bindRepository(repositoryImpl: WeatherRepositoryImpl) : WeatherRepository
 }
